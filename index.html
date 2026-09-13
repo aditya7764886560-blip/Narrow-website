@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinav Mishra | Web Design & Digital Marketing</title>
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #090d16;
+            --bg-card: rgba(30, 41, 59, 0.75);
+            --bg-card-hover: rgba(51, 65, 85, 0.85);
+            --accent-gold: #fbbf24;
+            --accent-blue: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --glass-border: rgba(255, 255, 255, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.5;
+            background-image: 
+                radial-gradient(circle at 10% 15%, rgba(56, 189, 248, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 90% 80%, rgba(251, 191, 36, 0.06) 0%, transparent 45%);
+            background-attachment: fixed;
+        }
+
+        /* --- HEADER / NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 40px;
+            z-index: 1000;
+            backdrop-filter: blur(16px);
+            background: rgba(9, 13, 22, 0.85);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        /* ENHANCED PREMIUM NARROW LOGO */
+        .brand-logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 6px 16px 6px 8px;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: border-color 0.3s ease;
+        }
+
+        .brand-logo-wrapper:hover {
+            border-color: var(--accent-gold);
+        }
+
+        .nr-logo-icon {
+            width: 36px;
+            height: 36px;
+            background: #ffffff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+        }
+
+        .nr-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .brand-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        nav ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--accent-gold);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: auto;
+            padding: 130px 20px 60px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: 20px;
+            color: var(--accent-gold);
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(24px, 5vw, 48px);
+            line-height: 1.3;
+            font-weight: 800;
+            margin-bottom: 16px;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #ffffff;
+            word-break: normal;
+        }
+
+        .hero-content h1 span {
+            color: var(--accent-gold);
+            display: inline;
+        }
+
+        .hero-content p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-wa-main {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s ease;
+        }
+
+        .btn-wa-main:active {
+            transform: scale(0.96);
+        }
+
+        /* --- SECTIONS COMMON --- */
+        section {
+            padding: 50px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: clamp(22px, 4vw, 32px);
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .section-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* --- AUTO MOVING SLIDER COMMON STYLES --- */
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+        }
+
+        /* Services Moving Track */
+        .services-track {
+            animation: scrollMarquee 20s linear infinite;
+        }
+
+        /* Why Us Moving Track */
+        .whyus-track {
+            animation: scrollMarquee 25s linear infinite;
+        }
+
+        .marquee-container:hover .marquee-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* SERVICE CARD STYLES */
+        .service-card-interactive {
+            width: 320px;
+            flex-shrink: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .service-card-interactive:hover {
+            border-color: var(--accent-gold);
+            background: var(--bg-card-hover);
+            transform: translateY(-4px);
+        }
+
+        .service-card-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(251, 191, 36, 0.12);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--accent-gold);
+            margin-bottom: 16px;
+        }
+
+        .service-card-interactive h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .service-card-interactive p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .tap-hint {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent-blue);
+        }
+
+        /* WHY CHOOSE US CARD STYLES */
+        .why-card {
+            width: 260px;
+            flex-shrink: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            padding: 18px;
+            border-radius: 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .why-icon-box {
+            width: 38px;
+            height: 38px;
+            background: rgba(56, 189, 248, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: var(--accent-blue);
+            flex-shrink: 0;
+        }
+
+        .why-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .why-info p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* --- MODAL POPUP --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-body {
+            background: #1e293b;
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px 24px;
+            max-width: 450px;
+            width: 100%;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #fff;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .modal-body h3 {
+            font-size: 20px;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        .modal-body ul {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .modal-body ul li {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .modal-body ul li i {
+            color: #25D366;
+        }
+
+        /* --- CLIENTS PORTFOLIO --- */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .client-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .client-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .client-title {
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .status-badge {
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 12px;
+            text-transform: uppercase;
+        }
+
+        .status-badge.working {
+            background: rgba(37, 211, 102, 0.15);
+            color: #25D366;
+        }
+
+        .status-badge.pending {
+            background: rgba(251, 191, 36, 0.15);
+            color: var(--accent-gold);
+        }
+
+        .client-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .client-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            word-break: break-all;
+        }
+
+        /* --- INDUSTRIES --- */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 12px;
+        }
+
+        .industry-box {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 16px 10px;
+            text-align: center;
+        }
+
+        .industry-box i {
+            font-size: 20px;
+            color: var(--accent-gold);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .industry-box span {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* --- OWNER & BUSINESS DETAILS --- */
+        .business-info-section {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .owner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            align-items: center;
+        }
+
+        .owner-card-detail h3 {
+            font-size: 22px;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 4px;
+        }
+
+        .owner-subtitle {
+            font-size: 13px;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .contact-item i {
+            font-size: 16px;
+            color: var(--accent-blue);
+        }
+
+        .contact-item div label {
+            display: block;
+            font-size: 10px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .contact-item div a, .contact-item div span {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-main);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .startup-badge-card {
+            background: rgba(251, 191, 36, 0.05);
+            border: 1px dashed var(--accent-gold);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .startup-badge-card i {
+            font-size: 32px;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        .startup-badge-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .startup-badge-card p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* FOOTER & FLOATING WA */
+        footer {
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 52px;
+            height: 52px;
+            background: #25D366;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            text-decoration: none;
+        }
+
+        /* --- MOBILE ADJUSTMENTS --- */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 16px;
+            }
+            nav ul {
+                width: 100%;
+                justify-content: center;
+            }
+            .hero {
+                padding-top: 135px;
+            }
+            .business-info-section {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Direct WhatsApp Button -->
+    <a href="https://wa.me/918252820115" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Header Navigation -->
+    <header>
+        <!-- CLEAN & PREMIUM LOGO WITH ONLY NARROW -->
+        <a href="#" class="brand-logo-wrapper">
+            <div class="nr-logo-icon">
+                <!-- High-Resolution Vector Representation of Your NR Logo -->
+                <svg class="nr-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="15" y="15" width="12" height="70" fill="#000000"/>
+                    <path d="M 27 15 L 75 70 L 63 70 L 15 15 Z" fill="#000000"/>
+                    <path d="M 45 15 H 75 C 85 15 88 28 78 38 L 45 38 Z" fill="#000000"/>
+                    <path d="M 52 38 L 85 85 H 70 L 40 42 Z" fill="#000000"/>
+                </svg>
+            </div>
+            <span class="brand-title">NARROW</span>
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#clients">Our Clients</a></li>
+                <li><a href="#industries">Industries</a></li>
+                <li><a href="#business-info">Owner Info</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-badge">
+            <i class="fa-solid fa-rocket"></i> Modern Digital Solutions Provider
+        </div>
+        <div class="hero-content">
+            <h1>ELEVATE YOUR BRAND WITH <span>HIGH-SPEED WEBSITES</span> & MARKETING</h1>
+            <p>We craft high-converting business websites, execute targeted growth campaigns, and turn everyday digital interactions into active customers.</p>
+            <a href="https://wa.me/918252820115" target="_blank" class="btn-wa-main">
+                <i class="fa-brands fa-whatsapp"></i> Connect on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- 1. Auto-Moving Services Section -->
+    <section id="services">
+        <div class="section-header">
+            <h2 class="section-title">Our Specialized Services</h2>
+            <p class="section-subtitle">Auto-sliding services. Tap any service card to view details</p>
+        </div>
+
+        <div class="marquee-container">
+            <div class="marquee-track services-track">
+                <!-- Set 1 -->
+                <div class="service-card-interactive" onclick="openModal('web-design-modal')">
+                    <div class="service-card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>1. Website Design</h3>
+                    <p>Custom-coded, lightning-fast, and responsive web development tailored to convert site visitors into clients.</p>
+                    <div class="tap-hint">Tap to view details <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+
+                <div class="service-card-interactive" onclick="openModal('smm-modal')">
+                    <div class="service-card-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                    <h3>2. Social Media Marketing</h3>
+                    <p>Data-driven brand strategies, creative content management, and targeted lead campaigns on Meta platforms.</p>
+                    <div class="tap-hint">Tap to view details <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+
+                <!-- Duplicate Loop for Infinite Auto-Scroll -->
+                <div class="service-card-interactive" onclick="openModal('web-design-modal')">
+                    <div class="service-card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>1. Website Design</h3>
+                    <p>Custom-coded, lightning-fast, and responsive web development tailored to convert site visitors into clients.</p>
+                    <div class="tap-hint">Tap to view details <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+
+                <div class="service-card-interactive" onclick="openModal('smm-modal')">
+                    <div class="service-card-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                    <h3>2. Social Media Marketing</h3>
+                    <p>Data-driven brand strategies, creative content management, and targeted lead campaigns on Meta platforms.</p>
+                    <div class="tap-hint">Tap to view details <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service 1 Modal -->
+    <div class="modal-overlay" id="web-design-modal">
+        <div class="modal-body">
+            <button class="modal-close" onclick="closeModal('web-design-modal')"><i class="fa-solid fa-xmark"></i></button>
+            <h3>🌐 Website Design Services</h3>
+            <p style="color: var(--text-muted); font-size: 13px;">What we deliver in our website package:</p>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> 100% Mobile & Tablet Responsive Layout</li>
+                <li><i class="fa-solid fa-check"></i> High Speed & Instant Page Loading</li>
+                <li><i class="fa-solid fa-check"></i> Direct WhatsApp Integration Included</li>
+                <li><i class="fa-solid fa-check"></i> Search Engine (SEO) Ready Code</li>
+                <li><i class="fa-solid fa-check"></i> Modern Glassmorphism Visual Theme</li>
+            </ul>
+            <a href="https://wa.me/918252820115?text=Hi%20Abhinav,%20I%20am%20interested%20in%20Website%20Design" target="_blank" class="btn-wa-main" style="width: 100%; justify-content: center; margin-top: 10px;">
+                <i class="fa-brands fa-whatsapp"></i> Book Website Design
+            </a>
+        </div>
+    </div>
+
+    <!-- Service 2 Modal -->
+    <div class="modal-overlay" id="smm-modal">
+        <div class="modal-body">
+            <button class="modal-close" onclick="closeModal('smm-modal')"><i class="fa-solid fa-xmark"></i></button>
+            <h3>📱 Social Media Marketing</h3>
+            <p style="color: var(--text-muted); font-size: 13px;">Scale your reach with targeted campaigns:</p>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> Instagram & Facebook Page Management</li>
+                <li><i class="fa-solid fa-check"></i> High-Converting Graphic Banner Designs</li>
+                <li><i class="fa-solid fa-check"></i> Targeted Meta Lead Generation Ads</li>
+                <li><i class="fa-solid fa-check"></i> Organic Profile SEO Optimization</li>
+                <li><i class="fa-solid fa-check"></i> Regular Performance Analytics Reports</li>
+            </ul>
+            <a href="https://wa.me/918252820115?text=Hi%20Abhinav,%20I%20am%20interested%20in%20Social%20Media%20Marketing" target="_blank" class="btn-wa-main" style="width: 100%; justify-content: center; margin-top: 10px;">
+                <i class="fa-brands fa-whatsapp"></i> Book Marketing Campaign
+            </a>
+        </div>
+    </div>
+
+    <!-- 2. Auto-Moving Why Choose Us Section -->
+    <section id="why-us">
+        <div class="section-header">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <p class="section-subtitle">Concrete advantages that guarantee measurable digital growth</p>
+        </div>
+
+        <div class="marquee-container">
+            <div class="marquee-track whyus-track">
+                <!-- Original Items -->
+                <div class="why-card">
+                    <div class="why-icon-box"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <div class="why-info"><h4>Mobile Responsive</h4><p>Fits all displays.</p></div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon-box"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="why-info"><h4>Fast Loading</h4><p>Under 2 second load.</p></div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon-box"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div class="why-info"><h4>WhatsApp Direct</h4><p>Instant client connection.</p></div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon-box"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <div class="why-info"><h4>SEO Ready</h4><p>Clean Google standards.</p></div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon-box"><i class="fa-solid fa-bullseye"></i></div>
+                    <div class="why-info"><h4>Lead Focused</h4><p>Driven for sales growth.</p></div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon-box"><i class="fa-solid fa-headset"></i></div>
+                    <div class="why-info"><h4>Direct Support</h4><p>Founder side assistance.</p></div>
+                </div>
+
+                <!-- Duplicated Items for Continuous Infinite Loop -->
+                <div class="why-card">
+                    <div class="why-icon-box"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <div class="why-info"><h4>Mobile Responsive</h4><p>Fits all displays.</p></div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon-box"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="why-info"><h4>Fast Loading</h4><p>Under 2 second load.</p></div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon-box"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div class="why-info"><h4>WhatsApp Direct</h4><p>Instant client connection.</p></div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon-box"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <div class="why-info"><h4>SEO Ready</h4><p>Clean Google standards.</p></div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon-box"><i class="fa-solid fa-bullseye"></i></div>
+                    <div class="why-info"><h4>Lead Focused</h4><p>Driven for sales growth.</p></div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon-box"><i class="fa-solid fa-headset"></i></div>
+                    <div class="why-info"><h4>Direct Support</h4><p>Founder side assistance.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Our Clients Section -->
+    <section id="clients">
+        <div class="section-header">
+            <h2 class="section-title">Our Clients & Portfolio</h2>
+            <p class="section-subtitle">Real businesses we are helping scale online</p>
+        </div>
+
+        <div class="clients-grid">
+            <!-- Client 1 -->
+            <div class="client-card">
+                <div>
+                    <div class="client-header">
+                        <span class="client-title">Babaomdevdigitalstudio</span>
+                        <span class="status-badge working">Working</span>
+                    </div>
+                    <p class="client-desc">Digital photography studio brand handling social identity and client media showcasing.</p>
+                </div>
+                <a href="https://www.instagram.com/_babaomdevdigitalstudio?stkn=MTdsc2F4cXVjb3FicQ==" target="_blank" class="client-link">
+                    <i class="fa-brands fa-instagram"></i> View Profile &rarr;
+                </a>
+            </div>
+
+            <!-- Client 2 -->
+            <div class="client-card">
+                <div>
+                    <div class="client-header">
+                        <span class="client-title">Manipal Dental Care</span>
+                        <span class="status-badge working">Working</span>
+                    </div>
+                    <p class="client-desc">Modern healthcare web application designed for patient appointments & clinic branding.</p>
+                </div>
+                <a href="https://manipal-dental-care.netlify.app/" target="_blank" class="client-link">
+                    <i class="fa-solid fa-globe"></i> Visit Live Website &rarr;
+                </a>
+            </div>
+
+            <!-- Client 3 -->
+            <div class="client-card">
+                <div>
+                    <div class="client-header">
+                        <span class="client-title">CCTV Camera Services</span>
+                        <span class="status-badge pending">Pending / Working</span>
+                    </div>
+                    <p class="client-desc">Security & surveillance service provider website architecture under active setup.</p>
+                </div>
+                <span class="client-link" style="color: var(--text-muted); cursor: default;">
+                    <i class="fa-solid fa-clock"></i> In Progress
+                </span>
+            </div>
+
+            <!-- Client 4 -->
+            <div class="client-card">
+                <div>
+                    <div class="client-header">
+                        <span class="client-title">Yaden Colour Lab</span>
+                        <span class="status-badge working">Working</span>
+                    </div>
+                    <p class="client-desc">Professional printing and digital image editing service agency web platform.</p>
+                </div>
+                <span class="client-link" style="color: #25D366; cursor: default;">
+                    <i class="fa-solid fa-check-circle"></i> Active Client Partner
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Industries We Serve -->
+    <section id="industries">
+        <div class="section-header">
+            <h2 class="section-title">Industries We Serve</h2>
+            <p class="section-subtitle">Custom strategies developed for local business sectors</p>
+        </div>
+
+        <div class="industries-grid">
+            <div class="industry-box"><i class="fa-solid fa-heart"></i><span>Event & Wedding</span></div>
+            <div class="industry-box"><i class="fa-solid fa-user-doctor"></i><span>Clinics</span></div>
+            <div class="industry-box"><i class="fa-solid fa-graduation-cap"></i><span>Coaching</span></div>
+            <div class="industry-box"><i class="fa-solid fa-scissors"></i><span>Salons</span></div>
+            <div class="industry-box"><i class="fa-solid fa-utensils"></i><span>Restaurants</span></div>
+            <div class="industry-box"><i class="fa-solid fa-couch"></i><span>Interiors</span></div>
+            <div class="industry-box"><i class="fa-solid fa-video"></i><span>CCTV Security</span></div>
+            <div class="industry-box"><i class="fa-solid fa-plug"></i><span>Electricians</span></div>
+            <div class="industry-box"><i class="fa-solid fa-plane"></i><span>Travel Agencies</span></div>
+            <div class="industry-box"><i class="fa-solid fa-store"></i><span>Local Shops</span></div>
+        </div>
+    </section>
+
+    <!-- 5. Owner Information Section -->
+    <section id="business-info">
+        <div class="business-info-section">
+            <div class="owner-grid">
+                <div class="owner-card-detail">
+                    <h3>Abhinav Mishra</h3>
+                    <div class="owner-subtitle">Agency Founder & Lead Developer</div>
+                    
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <label>Email Address</label>
+                                <a href="mailto:abhinavkumarmishra83@gamil.com">abhinavkumarmishra83@gamil.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <label>Direct Contact Number</label>
+                                <a href="tel:8252820115">+91 8252820115</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <div>
+                                <label>WhatsApp Connect</label>
+                                <a href="https://wa.me/918252820115" target="_blank">+91 8252820115</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="startup-badge-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h4>2 Months Early Startup</h4>
+                    <p>Growing digital studio delivering high-velocity web designs and hyper-targeted digital marketing strategies with dedicated founder support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 NARROW. All Rights Reserved. Designed by Abhinav Mishra.</p>
+    </footer>
+
+    <!-- Modal Controller Script -->
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
+</body>
+</html>
+
